@@ -1,0 +1,50 @@
+return Card(
+                      color: Theme.of(context).colorScheme.surface,
+                      elevation: 5,
+                      child: Row(
+                        children: <Widget>[
+                          Container(
+                            decoration: BoxDecoration(
+                                border: Border.all(
+                                    color: Theme.of(context).focusColor,
+                                    width: 1)),
+                            padding: EdgeInsets.all(10),
+                            margin: EdgeInsets.symmetric(
+                                vertical: 10, horizontal: 15),
+
+                            // price text
+
+                            child: Text(
+                              "\$${transactions[index].amount.toStringAsFixed(2)}",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18,
+                                  color: Theme.of(context).colorScheme.primary),
+                            ),
+                          ),
+
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+
+                              // title of tx text
+
+                              Text(
+                                transactions[index].title,
+                                style: Theme.of(context).textTheme.headline6,
+                              ),
+
+                              // date text
+
+                              Text(
+                                DateFormat("dd.MM.yyyy")
+                                    .format(transactions[index].date),
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 11,
+                                    color: Colors.grey.shade700),
+                              ),
+                            ],
+                          )
+                        ],
+                      ));
